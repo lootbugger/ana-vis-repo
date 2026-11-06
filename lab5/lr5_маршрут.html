@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_abf5c461269f6491511999532f1f2a6d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_abf5c461269f6491511999532f1f2a6d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_abf5c461269f6491511999532f1f2a6d = L.map(
+                "map_abf5c461269f6491511999532f1f2a6d",
+                {
+                    center: [49.55288475, 25.592854124669483],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cffe8f306b5bc01ea677b4836da17432 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cffe8f306b5bc01ea677b4836da17432.addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var poly_line_b8e81412b6bf51bf8db4e63ef3724bee = L.polyline(
+                [[49.5537071, 25.6004534], [49.5537023, 25.6003766], [49.5536767, 25.5999769], [49.5537339, 25.5999201], [49.5537113, 25.5995446], [49.5537029, 25.5994144], [49.5536782, 25.5992691], [49.5536558, 25.5986793], [49.5536279, 25.5980341], [49.5536174, 25.5976478], [49.5536186, 25.597534], [49.5536518, 25.5975307], [49.5536507, 25.5974827], [49.5543586, 25.5973831], [49.5546155, 25.5973508], [49.5547864, 25.5970318], [49.5547642, 25.5966567], [49.554876, 25.5960492], [49.555026, 25.5958468], [49.5550859, 25.5956472], [49.5551101, 25.5953464], [49.5551284, 25.595244], [49.5557472, 25.5950796], [49.5557199, 25.5949878], [49.5556941, 25.5949967], [49.5556941, 25.5949967], [49.5555677, 25.5943337], [49.5554359, 25.5936326], [49.5554233, 25.593555], [49.5554468, 25.5935458], [49.5553755, 25.5929773], [49.5553825, 25.5926514], [49.5552155, 25.5923552], [49.5552601, 25.5921952], [49.5554755, 25.5916927], [49.5558228, 25.5914665], [49.5558201, 25.5912637], [49.5557984, 25.5911203], [49.5557991, 25.5910063], [49.5558032, 25.5908898], [49.555677, 25.5906754], [49.555743, 25.5900614], [49.555743, 25.5900614], [49.5554899, 25.5900499], [49.5546072, 25.5881947], [49.5545214, 25.5880711], [49.5542977, 25.5877335], [49.5542135, 25.5875819], [49.5540363, 25.5872642], [49.5539554, 25.5875306], [49.5539051, 25.5876391], [49.553832, 25.5877137], [49.5538085, 25.5877317], [49.553609, 25.5879226], [49.553347, 25.5878484], [49.5533507, 25.5878038], [49.5533507, 25.5878038], [49.553347, 25.5878484], [49.5530304, 25.5877671], [49.5529598, 25.5877536], [49.5527574, 25.5877534], [49.5519382, 25.5878034], [49.5519194, 25.5875796], [49.5519118, 25.58749], [49.5518694, 25.5874985], [49.5518273, 25.5870063], [49.5517891, 25.5870139], [49.5516832, 25.5868775], [49.5513274, 25.5869117], [49.5508443, 25.5869804], [49.5506148, 25.5870087], [49.5506195, 25.58716], [49.5504993, 25.5871681], [49.5504033, 25.5871746], [49.5504085, 25.5873991], [49.5504224, 25.5879079], [49.5504224, 25.5879079], [49.5504395, 25.5884976], [49.5504583, 25.588951], [49.5505585, 25.5889485], [49.5506841, 25.5889449], [49.5507214, 25.5889974], [49.5509516, 25.5889748], [49.5515121, 25.5889099], [49.5518986, 25.5888756], [49.5519046, 25.5889864], [49.5519037, 25.5890431], [49.5519682, 25.5891432], [49.5520044, 25.5891563], [49.5521132, 25.5891958], [49.5524401, 25.589708], [49.5525162, 25.5897029], [49.5525162, 25.5897029], [49.5526063, 25.5896976], [49.5526128, 25.5900748], [49.5525672, 25.5900767], [49.5525942, 25.5906879], [49.5526502, 25.5908489], [49.5527061, 25.5910416], [49.5528155, 25.5910483], [49.5528836, 25.5910542], [49.5532976, 25.5910828], [49.5532976, 25.5910828], [49.5528836, 25.5910542], [49.5528155, 25.5910483], [49.5528084, 25.5914299], [49.5528064, 25.5916849], [49.5528045, 25.5919353], [49.5528018, 25.5921871], [49.5527989, 25.5924455], [49.5527978, 25.5925461], [49.5527944, 25.5928333], [49.5527944, 25.5928333], [49.5526908, 25.5928243], [49.5524726, 25.5927944], [49.5521305, 25.5927459], [49.5519924, 25.5927263], [49.55181, 25.5927061], [49.5513589, 25.5926562], [49.551329, 25.5926529], [49.5513047, 25.5926511], [49.5511341, 25.5926386], [49.5509466, 25.5926633], [49.5508222, 25.5926751], [49.5506762, 25.5926898], [49.5503632, 25.5926861], [49.5500655, 25.5926224], [49.5497316, 25.5925182], [49.5497221, 25.5925792], [49.5493237, 25.5924557], [49.5493133, 25.5925435], [49.5493133, 25.5925435], [49.5498399, 25.5926886], [49.5498486, 25.592622], [49.550067, 25.5926984], [49.5502003, 25.5927357], [49.5506883, 25.5928188], [49.5508298, 25.5928016], [49.5508626, 25.5931736], [49.5509961, 25.5943752], [49.551075, 25.5943758], [49.5510787, 25.5944302], [49.5511003, 25.594752], [49.5511119, 25.594924], [49.5513118, 25.5949148], [49.5513118, 25.5949148], [49.5518543, 25.5948903], [49.551929, 25.5949255], [49.5519314, 25.595157], [49.551933, 25.5952629], [49.5523361, 25.5952578], [49.5523364, 25.5953052], [49.5523419, 25.5961204], [49.5523675, 25.5976428], [49.5523678, 25.5976769], [49.5525915, 25.5976609], [49.5525932, 25.5977023], [49.5530333, 25.5976559], [49.5530357, 25.5979043], [49.5530357, 25.5979043], [49.5530333, 25.5976559], [49.5535493, 25.5975991], [49.5535771, 25.5976538], [49.5536051, 25.5986799], [49.5536284, 25.5992778], [49.553636, 25.5993149], [49.5536434, 25.5994223], [49.5536495, 25.599513], [49.5536514, 25.599555], [49.5536656, 25.599784], [49.5536767, 25.5999769], [49.5537023, 25.6003766], [49.5537071, 25.6004534]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            poly_line_b8e81412b6bf51bf8db4e63ef3724bee.bindTooltip(
+                `<div>
+                     по ребрах графа
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bd6f7ca3a4579453739200a0ce2f7ca9 = L.polyline(
+                [[49.5537363, 25.6006158972764], [49.5555786, 25.5952508], [49.5558207, 25.5903723], [49.553382150000004, 25.587606819542458], [49.5503226, 25.5880834], [49.5525322, 25.5898863], [49.5532324, 25.5912223], [49.5528934, 25.5928464], [49.5494932, 25.592786054545456], [49.5514925, 25.5948282], [49.5532482, 25.5978969], [49.5537363, 25.6006158972764]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "6", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            poly_line_bd6f7ca3a4579453739200a0ce2f7ca9.bindTooltip(
+                `<div>
+                     прямі відрізки
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_83e08bb99ecf034f00cef1c2929847c6 = L.marker(
+                [49.5537363, 25.6006158972764],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_638d5690cba8b2548cc89b0e9f46a309 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e0\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_83e08bb99ecf034f00cef1c2929847c6.bindTooltip(
+                `<div>
+                     СТАРТ: Вокзал Тернопіль
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83e08bb99ecf034f00cef1c2929847c6.setIcon(div_icon_638d5690cba8b2548cc89b0e9f46a309);
+            
+    
+            var marker_a243bf9c5a2cf0fbd12ad532236dafee = L.marker(
+                [49.5555786, 25.5952508],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_8f42ea5694cb28c650fe8ec8804114e3 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e1\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_a243bf9c5a2cf0fbd12ad532236dafee.bindTooltip(
+                `<div>
+                     Стецьку Ярославові
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a243bf9c5a2cf0fbd12ad532236dafee.setIcon(div_icon_8f42ea5694cb28c650fe8ec8804114e3);
+            
+    
+            var marker_378611e2265e7316777163e185378580 = L.marker(
+                [49.5558207, 25.5903723],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_13cdf7ad6690c948111cd32bc807ad12 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e2\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_378611e2265e7316777163e185378580.bindTooltip(
+                `<div>
+                     Степану Бандері
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_378611e2265e7316777163e185378580.setIcon(div_icon_13cdf7ad6690c948111cd32bc807ad12);
+            
+    
+            var marker_263bdf0584fec6185502681cc9351998 = L.marker(
+                [49.553382150000004, 25.587606819542458],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_251f858fe329fc11c993a94a188df19a = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e3\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_263bdf0584fec6185502681cc9351998.bindTooltip(
+                `<div>
+                     Тернопільський замок
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_263bdf0584fec6185502681cc9351998.setIcon(div_icon_251f858fe329fc11c993a94a188df19a);
+            
+    
+            var marker_065bcedce28ab8395f8a2648a3ca4b2d = L.marker(
+                [49.5503226, 25.5880834],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_73ecfa514a5a783a92a9cb1a3ece5ec7 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e4\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_065bcedce28ab8395f8a2648a3ca4b2d.bindTooltip(
+                `<div>
+                     Горбачевському Івану
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_065bcedce28ab8395f8a2648a3ca4b2d.setIcon(div_icon_73ecfa514a5a783a92a9cb1a3ece5ec7);
+            
+    
+            var marker_2eae79b3005837d2817b56e8a201400d = L.marker(
+                [49.5525322, 25.5898863],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_83e1f1e835b76ad2fd59df237f952a11 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e5\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_2eae79b3005837d2817b56e8a201400d.bindTooltip(
+                `<div>
+                     Королю Данилові Галицькому
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2eae79b3005837d2817b56e8a201400d.setIcon(div_icon_83e1f1e835b76ad2fd59df237f952a11);
+            
+    
+            var marker_2ba318b44699f73b681e1a8bbdb3a10d = L.marker(
+                [49.5532324, 25.5912223],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_a88af1d47705e27bc557cbc46d287314 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e6\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_2ba318b44699f73b681e1a8bbdb3a10d.bindTooltip(
+                `<div>
+                     Йосипу Сліпому
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2ba318b44699f73b681e1a8bbdb3a10d.setIcon(div_icon_a88af1d47705e27bc557cbc46d287314);
+            
+    
+            var marker_6184313974aada75056623d5c8f4a5d7 = L.marker(
+                [49.5528934, 25.5928464],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_122b7a962e5a7052bf3310ac93eb86a3 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e7\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_6184313974aada75056623d5c8f4a5d7.bindTooltip(
+                `<div>
+                     Іванові Франку
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6184313974aada75056623d5c8f4a5d7.setIcon(div_icon_122b7a962e5a7052bf3310ac93eb86a3);
+            
+    
+            var marker_a83ef00fc79b01202cbf32f0c0c12ae5 = L.marker(
+                [49.5494932, 25.592786054545456],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_a4b019178bbecfd77df7c37ba8aa4e03 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e8\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_a83ef00fc79b01202cbf32f0c0c12ae5.bindTooltip(
+                `<div>
+                     Тернопільський краєзнавчий музей
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a83ef00fc79b01202cbf32f0c0c12ae5.setIcon(div_icon_a4b019178bbecfd77df7c37ba8aa4e03);
+            
+    
+            var marker_719336be9c8f5fcaf861b1b7871cdb37 = L.marker(
+                [49.5514925, 25.5948282],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_6c60b46e2a066cfc840d1b3b015d0479 = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e9\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_719336be9c8f5fcaf861b1b7871cdb37.bindTooltip(
+                `<div>
+                     Соломії Крушельницькій
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_719336be9c8f5fcaf861b1b7871cdb37.setIcon(div_icon_6c60b46e2a066cfc840d1b3b015d0479);
+            
+    
+            var marker_0c7e201a14d96e47ee43dc57854a8a5c = L.marker(
+                [49.5532482, 25.5978969],
+                {
+}
+            ).addTo(map_abf5c461269f6491511999532f1f2a6d);
+        
+    
+            var div_icon_4f020f34c2722eb14fc9369c8e201a0f = L.divIcon({
+  "html": "\u003cb style=\"font-size:14px;color:white;background:red;padding:2px 6px;border-radius:10px\"\u003e10\u003c/b\u003e",
+  "className": "empty",
+});
+        
+    
+            marker_0c7e201a14d96e47ee43dc57854a8a5c.bindTooltip(
+                `<div>
+                     Музей політичних в’язнів
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c7e201a14d96e47ee43dc57854a8a5c.setIcon(div_icon_4f020f34c2722eb14fc9369c8e201a0f);
+            
+</script>
+</html>
